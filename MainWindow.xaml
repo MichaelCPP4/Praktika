@@ -1,0 +1,41 @@
+﻿<Window x:Class="bred.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:bred"
+        mc:Ignorable="d"
+        Title="Конвертор слов в график" Height="362" Width="1175">
+    <Grid>
+        <GroupBox Header="Данные" Margin="22,21,0,31" HorizontalAlignment="Left" Width="393" FontSize="18">
+            <Grid>
+                <Label Content="Слово:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="106" FontSize="18"/>
+                <Button Content="Построить график" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top" Click="CreateGrafik_Click" Background="#FF72FF41" Width="347" Height="43" FontSize="18"/>
+                <TextBox Focusable="True" x:Name="slovoTextBox" HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="347" Height="43" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Button Content="Очистить" HorizontalAlignment="Left" Margin="10,196,0,0" VerticalAlignment="Top" Click="ClearGrafik_Click" Background="#FF929292" Width="139" Height="43" FontSize="18"/>
+                <Button Content="Выход" HorizontalAlignment="Left" Margin="218,196,0,0" VerticalAlignment="Top" Click="ExitGrafik_Click" Background="#FFFF3939" Width="139" Height="43" FontSize="18"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="График" Margin="422,21,26,31" FontSize="18">
+            <Canvas x:Name="canvasPanel" RenderTransformOrigin="0.5,0.5" Height="220" Margin="2,0,-2,0">
+                <Canvas.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Canvas.RenderTransform>
+                <!--<StackPanel x:Name="stackPanel" Height="325" Width="731"></StackPanel>-->
+            </Canvas>
+        </GroupBox>
+        <Menu Margin="0,0,1059,0" Height="18" VerticalAlignment="Top">
+            <MenuItem Header="Опции">
+                <MenuItem Header="Построить график" Click="CreateGrafik_Click"></MenuItem>
+                <MenuItem Header="Очистить" Click="ClearGrafik_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Выход" Click="ExitGrafik_Click"></MenuItem>
+        </Menu>
+
+    </Grid>
+</Window>
